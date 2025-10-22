@@ -1,0 +1,690 @@
+:root {
+  --primary-color: #a4e402; /* Aksen Hijau Neon */
+  --secondary-color: #384252; /* Abu-abu Gelap */
+  --background-color: #121212; /* Latar Belakang Sangat Gelap */
+  --text-color: #ffffff;
+  --card-bg: #212121;
+  --high-impact: #d4e157;
+  --medium-impact: #ffc107;
+}
+
+/* ---------------------------------------------------- */
+/* 1. RESET DAN DASAR */
+/* ---------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+/* ---------------------------------------------------- */
+/* 2. HEADER & NAVIGASI */
+/* ---------------------------------------------------- */
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background-color: var(--card-bg); /* Gelap Solid */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.logo {
+  color: var(--primary-color);
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+nav a {
+  color: var(--text-color);
+  text-decoration: none;
+  margin-left: 25px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--primary-color);
+}
+
+/* ---------------------------------------------------- */
+/* 3. HERO SECTION (Hanya di index.html) */
+/* ---------------------------------------------------- */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-image: url("daniel-leone-g30P1zcOzXo-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  padding-top: 60px; /* Offset dari header */
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Overlay gelap */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 900px;
+  padding: 20px;
+}
+
+.hero-content h1 {
+  font-size: 4em;
+  font-weight: 900;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  line-height: 1.1;
+}
+
+.hero-content p {
+  font-size: 1.2em;
+  margin-bottom: 40px;
+  color: #ccc;
+}
+
+/* Tombol Umum */
+.hero-buttons .btn {
+  padding: 12px 30px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  margin: 0 10px;
+  transition: background-color 0.3s, color 0.3s;
+  display: inline-block;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+}
+
+.btn-primary:hover {
+  background-color: #c0f040;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+
+.btn-secondary:hover {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+}
+
+/* ---------------------------------------------------- */
+/* 4. FEATURE SECTION (Hanya di index.html) */
+/* ---------------------------------------------------- */
+.features-section {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 50px 50px;
+  background-color: var(--card-bg);
+}
+
+.feature-card {
+  background-color: #2a2a2a;
+  padding: 30px;
+  border-radius: 8px;
+  text-align: center;
+  flex: 1;
+  max-width: 350px;
+  border-bottom: 3px solid var(--primary-color);
+  transition: transform 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.feature-card i {
+  font-size: 2.5em;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.feature-card h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+/* ---------------------------------------------------- */
+/* 5. CONTENT SECTIONS (Activity & Improvement) */
+/* ---------------------------------------------------- */
+.content-section {
+  padding: 80px 50px;
+  text-align: center;
+}
+
+/* Penyesuaian agar konten di halaman terpisah tidak tertutup fixed header */
+.page-content-top {
+  padding-top: 100px;
+}
+
+.content-section h2 {
+  font-size: 2.5em;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.content-section .subtitle {
+  color: #aaa;
+  margin-bottom: 40px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Card Konten */
+.content-card {
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: left;
+  cursor: pointer;
+  transition: box-shadow 0.3s, transform 0.3s;
+  position: relative; /* KUNCI: Untuk positioning badge jumlah gambar */
+}
+
+.content-card:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+  transform: translateY(-3px);
+}
+
+/* BADGE JUMLAH GAMBAR DI CARD */
+.image-count-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 50;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: var(--text-color);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.8em;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.image-count-badge .fas {
+  color: var(--primary-color);
+}
+
+.content-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-footer {
+  padding: 15px;
+  min-height: 100px;
+}
+
+.card-footer h4 {
+  font-size: 1.1em;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+/* REVISI: Gaya untuk Badge Dept dan Date di Card Footer */
+.card-meta {
+  display: flex; /* Gunakan flexbox agar badge sejajar horizontal */
+  gap: 10px; /* Jarak antara badge dept dan date */
+  margin-top: 10px;
+}
+
+.dept-badge {
+  /* Gaya mirip badge lingkaran/oval, seperti di gambar */
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  padding: 5px 12px;
+  font-size: 0.8em;
+  font-weight: bold;
+
+  border-radius: 20px; /* Bentuk oval */
+  align-self: center;
+}
+
+.date-badge {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  padding: 5px 12px;
+  font-size: 0.8em;
+  font-weight: normal;
+
+  border-radius: 20px; /* Bentuk oval */
+  align-self: center;
+}
+
+/* Hapus kelas .dept dan .date lama yang tidak digunakan */
+.card-footer .dept,
+.card-footer .date {
+  display: none;
+}
+
+/* ---------------------------------------------------- */
+/* 6. TAB NAVIGASI (Hanya di activity.html) */
+/* ---------------------------------------------------- */
+.tab-nav {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.tab-button {
+  background-color: #333;
+  color: var(--text-color);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  font-weight: bold;
+
+  /* PENTING: Untuk mensejajarkan teks dan badge */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tab-button:hover:not(.active) {
+  background-color: #444;
+}
+
+.tab-button.active {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+}
+
+/* REVISI UNTUK BADGE BULAT */
+.badge {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+
+  /* Kunci untuk bentuk lingkaran penuh */
+  width: 20px;
+  height: 20px;
+  border-radius: 50%; /* Membuat bentuk lingkaran */
+  padding: 0; /* Hapus padding agar tidak merusak width/height */
+
+  font-size: 0.75em;
+  font-weight: 900;
+
+  /* Centering angka di tengah */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0; /* Mencegah penyusutan */
+}
+
+/* WARNA BADGE PADA TOMBOL AKTIF */
+.tab-button.active .badge {
+  /* Balik warna badge saat tombolnya aktif */
+  color: var(--primary-color);
+  background-color: var(--background-color);
+}
+
+.tab-content {
+  display: none;
+  animation: fadeIn 0.5s;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.click-info {
+  font-size: 0.9em;
+  color: #888;
+  margin-top: 20px;
+}
+
+/* ---------------------------------------------------- */
+/* 7. IMPROVEMENT SECTION (improvement.html) */
+/* ---------------------------------------------------- */
+.improvement-card .description {
+  color: #aaa;
+  font-size: 0.9em;
+  margin-bottom: 15px;
+}
+
+.improvement-card .tag-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.tag {
+  padding: 3px 8px;
+  border-radius: 3px;
+  font-size: 0.75em;
+  font-weight: bold;
+}
+
+.tag.high {
+  background-color: var(--high-impact);
+  color: var(--background-color);
+}
+
+.tag.medium {
+  background-color: var(--medium-impact);
+  color: var(--background-color);
+}
+
+.btn-program {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  padding: 8px 0;
+  border-radius: 5px;
+  margin-top: 15px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* ---------------------------------------------------- */
+/* 8. FOOTER */
+/* ---------------------------------------------------- */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: var(--card-bg);
+  color: #888;
+  font-size: 0.9em;
+}
+
+/* ---------------------------------------------------- */
+/* 9. MODAL (REVISI TOTAL UNTUK CAROUSEL) */
+/* ---------------------------------------------------- */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content-wrapper {
+  position: relative;
+  margin: 1rem auto;
+  padding: 20px;
+  width: 90%;
+  max-width: 800px;
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* WRAPPER UNTUK CAROUSEL */
+.carousel-container {
+  position: relative;
+  max-height: 80vh;
+  overflow: hidden;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.modal-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Gunakan cover agar gambar penuh di container */
+  display: block;
+}
+
+/* Gaya Tombol Navigasi (Panah) */
+.prev-slide,
+.next-slide {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 10px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5em;
+  transition: 0.6s ease;
+  user-select: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 55;
+  border-radius: 50%;
+}
+
+.next-slide {
+  right: 10px;
+}
+
+.prev-slide {
+  left: 10px;
+}
+
+.prev-slide:hover,
+.next-slide:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Gaya Metadata di Bawah Gambar (Dept, Tanggal, Counter) */
+.image-footer-meta {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 15px;
+  padding-top: 10px;
+  /* Gradasi gelap agar badge terlihat */
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0));
+  color: white;
+  gap: 10px;
+}
+
+.dept-badge-modal {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  padding: 4px 10px;
+  border-radius: 5px;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+/* Gaya Counter Gambar */
+#modal-counter {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 20px;
+  font-size: 0.8em;
+  font-weight: bold;
+  /* Posisikan di kanan */
+  margin-left: auto;
+}
+
+.modal-text-content {
+  padding: 20px 0 0;
+  text-align: left;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  color: var(--primary-color);
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+  z-index: 2001; /* Pastikan di atas semua elemen modal */
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* ---------------------------------------------------- */
+/* 10. ANIMASI & RESPONSIVITAS (Mobile Menu & Global) */
+/* ---------------------------------------------------- */
+
+/* Gaya untuk Tombol Toggle */
+.menu-toggle {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  font-size: 1.5em;
+  cursor: pointer;
+  padding: 5px 10px;
+  z-index: 1001;
+  display: none; /* Sembunyikan secara default */
+}
+
+/* Navigasi saat dibuka (Mobile - REVISI: Sidebar dari Kanan) */
+#main-nav.open {
+  display: flex;
+  flex-direction: column;
+
+  /* PENTING: Mengubah dari full-screen overlay menjadi sidebar */
+  position: fixed;
+  top: 0;
+  right: 0; /* Posisikan di kanan */
+  left: auto; /* Hilangkan ketergantungan posisi kiri */
+
+  width: 200px; /* Lebar Sidebar */
+  height: 100vh; /* Tinggi penuh layar */
+
+  background-color: var(--card-bg);
+  padding-top: 80px;
+  align-items: flex-start; /* Sejajarkan teks ke kiri */
+  justify-content: flex-start;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+
+  /* Ganti animasi dari translateY (atas) menjadi translateX (kanan) */
+  animation: slideRightToLeft 0.3s forwards;
+  z-index: 999;
+}
+
+#main-nav.open a {
+  width: 100%; /* Lebar link mengikuti lebar sidebar */
+  text-align: left; /* Teks rata kiri */
+  padding: 15px 20px;
+  margin: 0;
+  border-bottom: 1px solid #333;
+}
+
+/* Animasi baru: Meluncur dari luar kanan ke dalam */
+@keyframes slideRightToLeft {
+  from {
+    transform: translateX(100%); /* Mulai dari luar layar */
+  }
+  to {
+    transform: translateX(0); /* Berakhir di posisi normal */
+  }
+}
+
+/* Hapus @keyframes slideIn yang lama */
+/* @keyframes slideIn { ... } */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .main-header {
+    padding: 10px 20px;
+  }
+
+  /* Tampilkan tombol Hamburger */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Sembunyikan navigasi default di mobile */
+  nav {
+    display: none;
+  }
+
+  .page-content-top {
+    padding-top: 120px; /* REVISI: Beri ruang lebih untuk judul */
+  }
+
+  .hero-content h1 {
+    font-size: 2.5em;
+  }
+
+  .features-section {
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+
+  .feature-card {
+    max-width: 100%;
+  }
+
+  .content-section {
+    padding: 40px 20px;
+  }
+}

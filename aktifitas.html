@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Activity Reports</title>
+    <link rel="stylesheet" href="css.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="logo">DAILY REPORT</div>
+      <nav id="main-nav">
+        <a href="halaman.html">Home</a>
+        <a href="aktifitas.html" class="active">Activity</a>
+        <a href="perubahan.html">Improvement</a>
+      </nav>
+      <button class="menu-toggle" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+    </header>
+
+    <section id="activity" class="content-section page-content-top">
+      <h2>ACTIVITY REPORTS</h2>
+      <p class="subtitle">
+        Dokumentasi aktivitas harian berdasarkan departemen
+      </p>
+
+      <div class="tab-nav">
+        <button class="tab-button active" data-tab="ga">
+          GENERAL AFFAIR <span class="badge">4</span>
+        </button>
+        <button class="tab-button" data-tab="it">
+          INFORMATION TECHNOLOGY <span class="badge">3</span>
+        </button>
+        <button class="tab-button" data-tab="safety">
+          SAFETY K3 <span class="badge">3</span>
+        </button>
+      </div>
+
+      <div id="tab-ga" class="tab-content active">
+        <div class="grid-container">
+          <div
+            class="content-card"
+            onclick="openModalFromCard(this)"
+            data-gallery-urls="GA/cuci IBC.jpeg"
+            data-detail="&lt;p&gt;Melakukan Pencucian IBC.&lt;/p&gt;&lt;p&gt;Tujuannya agar Bisa Digunakan Ulang.&lt;/p&gt;"
+            data-total-images="1"
+          >
+            <div class="image-count-badge">
+              <i class="fas fa-images"></i> <span class="count">1</span>
+            </div>
+            <img src="GA/cuci IBC.jpeg" alt="Pencucian IBC" />
+            <div class="card-footer">
+              <h4>PENCUCIAN IBC</h4>
+              <div class="card-meta">
+                <span class="dept-badge">GA</span>
+                <span class="date-badge">11/09/2025</span>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="content-card"
+            onclick="openModalFromCard(this)"
+            data-gallery-urls="GA/mempersiapkan ruang meting.jpeg"
+            data-detail="&lt;p&gt;Mempersiapkan Ruang Meeting.&lt;/p&gt;&lt;p&gt;Memastikan Setiap Alat Berfungsi Dengan Baik.&lt;/p&gt;"
+            data-total-images="1"
+          >
+            <div class="image-count-badge">
+              <i class="fas fa-images"></i> <span class="count">1</span>
+            </div>
+            <img
+              src="GA/mempersiapkan ruang meting.jpeg"
+              alt="Mempersiapkan Ruang Meeting"
+            />
+            <div class="card-footer">
+              <h4>MEMPERSIAPKAN RUANG MEETING</h4>
+              <div class="card-meta">
+                <span class="dept-badge">GA</span>
+                <span class="date-badge">03/09/2025</span>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="content-card"
+            onclick="openModalFromCard(this)"
+            data-gallery-urls="GA/perbaikan keramik 1.jpeg,GA/perbaikan keramik 2.jpeg,GA/perbaikan keramik 3.jpeg"
+            data-detail="&lt;p&gt;Perbaikan Keramik di Area Gudang.&lt;/p&gt;&lt;p&gt;Mengganti tiga keramik yang retak untuk keamanan.&lt;/p&gt;"
+            data-total-images="3"
+          >
+            <div class="image-count-badge">
+              <i class="fas fa-images"></i> <span class="count">3</span>
+            </div>
+            <img src="GA/perbaikan keramik 1.jpeg" alt="Perbaikan Keramik" />
+            <div class="card-footer">
+              <h4>PERBAIKAN KERAMIK (3 Foto)</h4>
+              <div class="card-meta">
+                <span class="dept-badge">GA</span>
+                <span class="date-badge">03/09/2025</span>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="content-card"
+            onclick="openModalFromCard(this)"
+            data-gallery-urls="GA/penamblan lubang masjid befor.jpeg,GA/penamblan lubang masjid after.jpeg"
+            data-detail="&lt;p&gt;Memastikan Setiap Pekerjaan Diselesaikan Dengan Rapi.&lt;/p&gt;"
+            data-total-images="1"
+          >
+            <div class="image-count-badge">
+              <i class="fas fa-images"></i> <span class="count">2</span>
+            </div>
+            <img
+              src="GA/penamblan lubang masjid befor.jpeg"
+              alt="Penambalan Lubang Bekas AC Di Masjid"
+            />
+            <div class="card-footer">
+              <h4>PENAMBALAN LUBANG BEKAS AC DI MASJID</h4>
+              <div class="card-meta">
+                <span class="dept-badge">GA</span>
+                <span class="date-badge">04/09/2025</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--it-->
+      <div id="tab-it" class="tab-content">
+        <div class="grid-container">
+          <div
+            class="content-card"
+            onclick="openModalFromCard(this)"
+            data-gallery-urls="it/2.png"
+            data-detail="&lt;p&gt;Membuat Pamflet Untuk Memeriahkan Kegiatan Senam.&lt;/p&gt;"
+            data-total-images="1"
+          >
+            <div class="image-count-badge">
+              <i class="fas fa-images"></i> <span class="count">1</span>
+            </div>
+            <img src="it/2.png" alt="Server Maintenance" />
+            <div class="card-footer">
+              <h4>PAMFLET SENAM</h4>
+              <div class="card-meta">
+                <span class="dept-badge">IT</span>
+                <span class="date-badge">01/09/2025</span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="content-card"
+            onclick="openModalFromCard(this)"
+            data-gallery-urls="it/lptop pak raymond.jpeg"
+            data-detail="&lt;p&gt;Melakukan Penggantian Baterai Pada laptop Perusahaan.&lt;/p&gt;"
+            data-total-images="2"
+          >
+            <div class="image-count-badge">
+              <i class="fas fa-images"></i> <span class="count">1</span>
+            </div>
+            <img
+              src="it/lptop pak raymond.jpeg"
+              alt="Network Troubleshooting"
+            />
+            <div class="card-footer">
+              <h4>HARDWARE MAINTENANCE</h4>
+              <div class="card-meta">
+                <span class="dept-badge">IT</span>
+                <span class="date-badge">16/1/2025</span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="content-card"
+            onclick="openModalFromCard(this)"
+            data-gallery-urls="it/pembersihan ruang server - Copy.jpeg"
+            data-detail="&lt;p&gt;Melakukan Perawatan Pada Alat-Alat Yang Ada Diserver.&lt;/p&gt;"
+            data-total-images="1"
+          >
+            <div class="image-count-badge">
+              <i class="fas fa-images"></i> <span class="count">1</span>
+            </div>
+            <img src="it/pembersihan ruang server.jpeg" alt="Backup Data" />
+            <div class="card-footer">
+              <h4>PEMBERSIHAN RUANG SERVER</h4>
+              <div class="card-meta">
+                <span class="dept-badge">IT</span>
+                <span class="date-badge">17/1/2025</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--safety-->
+      <div id="tab-safety" class="tab-content">
+        <div class="grid-container">
+          <div
+            class="content-card"
+            onclick="openModalFromCard(this)"
+            data-gallery-urls="safety/belajar membuat IKA.jpeg"
+            data-detail="&lt;p&gt;Belajar Membuat IKA (Izin Kerja Aman).&lt;/p&gt;"
+            data-total-images="3"
+          >
+            <div class="image-count-badge">
+              <i class="fas fa-images"></i> <span class="count">1</span>
+            </div>
+            <img src="safety/belajar membuat IKA.jpeg" alt="Safety Training" />
+            <div class="card-footer">
+              <h4>PEMBUATAN IKA</h4>
+              <div class="card-meta">
+                <span class="dept-badge">SAFETY</span>
+                <span class="date-badge">06/10/2025</span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="content-card"
+            onclick="openModalFromCard(this)"
+            data-gallery-urls="safety/meeting CRD.jpeg"
+            data-detail="&lt;p&gt;Inspeksi jalur evakuasi dan rambu K3.&lt;/p&gt;&lt;p&gt;Memastikan semua jalur bebas hambatan dan rambu terlihat jelas.&lt;/p&gt;"
+            data-total-images="1"
+          >
+            <div class="image-count-badge">
+              <i class="fas fa-images"></i> <span class="count">1</span>
+            </div>
+            <img src="safety/meeting CRD.jpeg" alt="Evacuation Check" />
+            <div class="card-footer">
+              <h4>INSPEKSI JALUR EVAKUASI</h4>
+              <div class="card-meta">
+                <span class="dept-badge">SAFETY</span>
+                <span class="date-badge">16/1/2025</span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="content-card"
+            onclick="openModalFromCard(this)"
+            data-gallery-urls="safety/mempersiapkan berkas tes fasik.jpeg"
+            data-detail="&lt;p&gt;Pengecekan tabung APAR di semua area.&lt;/p&gt;&lt;p&gt;Semua tekanan normal dan label inspeksi terupdate.&lt;/p&gt;"
+            data-total-images="1"
+          >
+            <div class="image-count-badge">
+              <i class="fas fa-images"></i> <span class="count">1</span>
+            </div>
+            <img
+              src="safety/mempersiapkan berkas tes fasik.jpeg"
+              alt="Fire Check"
+            />
+            <div class="card-footer">
+              <h4>PENGECEKAN APAR</h4>
+              <div class="card-meta">
+                <span class="dept-badge">SAFETY</span>
+                <span class="date-badge">17/1/2025</span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="content-card"
+            onclick="openModalFromCard(this)"
+            data-gallery-urls="safety/pengecekan apar 1.jpeg,safety/pengecekan apar 2.jpeg"
+            data-detail="&lt;p&gt;Pengecekan tabung APAR di semua area.&lt;/p&gt;&lt;p&gt;Semua tekanan normal dan label inspeksi terupdate.&lt;/p&gt;"
+            data-total-images="1"
+          >
+            <div class="image-count-badge">
+              <i class="fas fa-images"></i> <span class="count">1</span>
+            </div>
+            <img src="safety/pengecekan apar 1.jpeg" alt="Fire Check" />
+            <div class="card-footer">
+              <h4>PENGECEKAN APAR</h4>
+              <div class="card-meta">
+                <span class="dept-badge">SAFETY</span>
+                <span class="date-badge">17/1/2025</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="image-modal" class="modal">
+      <div class="modal-content-wrapper">
+        <span class="close-btn">&times;</span>
+
+        <div class="carousel-container">
+          <img class="modal-image" id="modal-image" alt="Aktivitas" />
+
+          <a class="prev-slide" id="prev-slide"
+            ><i class="fas fa-chevron-left"></i
+          ></a>
+          <a class="next-slide" id="next-slide"
+            ><i class="fas fa-chevron-right"></i
+          ></a>
+
+          <div class="image-footer-meta">
+            <span id="modal-dept" class="dept-badge-modal"></span>
+            <span id="modal-date" class="date-badge"></span>
+            <span id="modal-counter" class="counter-badge"></span>
+          </div>
+        </div>
+
+        <div class="modal-text-content">
+          <h4 id="modal-caption"></h4>
+          <p id="modal-detail"></p>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>
+        &copy; 2025 Daily Report & Project Improvement. All rights reserved.
+        Made with Emergent.
+      </p>
+    </footer>
+
+    <script src="js.js"></script>
+  </body>
+</html>
